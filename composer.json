@@ -1,5 +1,5 @@
 {
-  "name": "hammock/laravel-erpnext-api-client",
+  "name": "akeroh/laravel-erpnext-api-client",
   "description": "A simple client to integrate ERPNext with Laravel 5.",
   "keywords": [
     "laravel",
@@ -12,6 +12,10 @@
     {
       "name": "Aleksandr Ivanov",
       "email": "a.ivanov@gpsolutions.com"
+    },
+    {
+      "name": "Tim van Gompel",
+      "email": "tim@akeroh.nl"
     }
   ],
   "require": {
