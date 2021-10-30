@@ -203,17 +203,21 @@ class ERPNextClient
      * @param array $fields
      * @return array
      */
-    public function uploadFile($data = null): array
+    public function uploadFile($data, $file_name, $doc_type, $doc_name): array
     {
         $this->resetBaseUrl();
         $this->curl->post('/api/method/upload_file', [
-            'file' => $data
+            'file' => new CURLFile($data, 'application/pdf', $file_name),
+            'file_name' => $file_name,
+            'doctype' => $doc_type,
+            'docname' => $doc_name,
+            'is_private' => true,
         ]);
 
         if ($this->curl->error) {
             return [];
         }
 
-        return $this->curl->response['data'] ?? [];
+        return $this->curl->response['message'] ?? [];
     }
 }
