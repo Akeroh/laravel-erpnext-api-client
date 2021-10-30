@@ -203,7 +203,7 @@ class ERPNextClient
      * @param array $fields
      * @return array
      */
-    public function uploadFile(string $resourceName, $data = null): array
+    public function uploadFile($data = null): array
     {
         $this->resetBaseUrl();
         $this->curl->post('/api/method/upload_file', [
