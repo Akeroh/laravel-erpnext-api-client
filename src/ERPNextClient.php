@@ -197,4 +197,23 @@ class ERPNextClient
 
         return ($this->curl->response['message'] ?? null) === 'ok';
     }
+
+    /**
+     * @param string $resourceName
+     * @param array $fields
+     * @return array
+     */
+    public function uploadFile(string $resourceName, $data = null): array
+    {
+        $this->resetBaseUrl();
+        $this->curl->post('/api/method/upload_file', [
+            'file' => $data
+        ]);
+
+        if ($this->curl->error) {
+            return [];
+        }
+
+        return $this->curl->response['data'] ?? [];
+    }
 }
