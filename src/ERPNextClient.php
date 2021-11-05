@@ -3,6 +3,7 @@
 namespace Hammock\LaravelERPNext;
 
 use Curl\Curl;
+use CURLFile;
 use Hammock\LaravelERPNext\Configuration\ConfigurationInterface;
 use Hammock\LaravelERPNext\Exception\AuthorizationException;
 
