@@ -221,4 +221,16 @@ class ERPNextClient
 
         return $this->curl->response['message'] ?? [];
     }
+    
+    public function getInvoice($id)
+    {
+        $this->resetBaseUrl();
+        $this->curl->get("/api/method/frappe.utils.print_format.download_pdf?doctype=Sales%20Invoice&name={$id}&_lang=nl");
+
+        if ($this->curl->error) {
+            return [];
+        }
+
+        return $this->curl->response ?? [];
+    }
 }
