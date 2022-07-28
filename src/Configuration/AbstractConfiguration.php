@@ -25,6 +25,16 @@ abstract class AbstractConfiguration implements ConfigurationInterface
     protected $password;
 
     /**
+     * @var string
+     */
+    protected $cfAccessId;
+
+    /**
+     * @var string
+     */
+    protected $cfAccessSecret;
+
+    /**
      * @return string
      */
     public function getDomain(): string
@@ -46,5 +56,21 @@ abstract class AbstractConfiguration implements ConfigurationInterface
     public function getPassword(): string
     {
         return $this->password;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCfAccessId(): string
+    {
+        return $this->cfAccessId;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCfAccessSecret(): string
+    {
+        return $this->cfAccessSecret;
     }
 }

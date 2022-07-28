@@ -12,5 +12,7 @@ return [
     /*
      * ERPNext user password
      */
-    'password' => env('ERPNEXT_USER_PASSWORD', '')
+    'password' => env('ERPNEXT_USER_PASSWORD', ''),
+    'cfAccessId' => env('ERPNEXT_USER_PASSWORD', ''),
+    'cfAccessSecret' => env('ERPNEXT_USER_PASSWORD', '')
 ];

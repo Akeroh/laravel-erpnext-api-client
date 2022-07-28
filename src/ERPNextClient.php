@@ -25,6 +25,16 @@ class ERPNextClient
     protected $password;
 
     /**
+     * @var string
+     */
+    protected $CfAccessId;
+
+    /**
+     * @var string
+     */
+    protected $CfAccessSecret;
+
+    /**
      * @var Curl
      */
     protected $curl;
@@ -57,6 +67,8 @@ class ERPNextClient
         $this->baseUrl = rtrim($config->getDomain(), '/\\ ');
         $this->curl = new Curl($this->baseUrl);
         $this->curl->setHeader('Accept', 'application/json');
+        $this->curl->setHeader('CF-Access-Client-Id', $config->getCfAccessId());
+        $this->curl->setHeader('CF-Access-Client-Secret', $config->getCfAccessSecret());
         $this->curl->setJsonDecoder(function ($response) {
             return json_decode($response, true, 512, JSON_ERROR_NONE);
         });
