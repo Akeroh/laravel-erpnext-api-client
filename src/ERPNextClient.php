@@ -27,12 +27,12 @@ class ERPNextClient
     /**
      * @var string
      */
-    protected $CfAccessId;
+    protected $cfAccessId;
 
     /**
      * @var string
      */
-    protected $CfAccessSecret;
+    protected $cfAccessSecret;
 
     /**
      * @var Curl

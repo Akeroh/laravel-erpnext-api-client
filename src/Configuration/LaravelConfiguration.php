@@ -21,7 +21,7 @@ class LaravelConfiguration extends AbstractConfiguration
         $user = Config::get('erpnext.username');
         $password = Config::get('erpnext.password');
         $cfAccessId = Config::get('erpnext.cfAccessId');
-        $cfAccessSecret = Config::get('erpnext.cfAccessId');
+        $cfAccessSecret = Config::get('erpnext.cfAccessSecret');
 
         if (!\is_string($domain)) {
             throw new InvalidCredentialsException('Domain address must be provided.');
